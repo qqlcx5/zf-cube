@@ -1,14 +1,80 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">首页</router-link> |
-      <router-link to="/course">我的课程</router-link>
-      <router-link to="/profile">个人中心</router-link>
+    <div class="container">
+      <router-view />
     </div>
-    <router-view/>
+    <div class="tabDiv">
+      <cube-tab-bar v-model="selectedLabelDefault" :data="tabs" @click="clickHandler" />
+    </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      selectedLabelDefault: '/',
+      tabs: [
+        {
+          label: '首页',
+          value: '/',
+          icon: 'iconfont icon-huaban43 icon',
+        },
+        {
+          label: '我的课程',
+          value: '/course',
+          icon: 'iconfont icon-huaban5 icon',
+        },
+        {
+          label: '个人中心',
+          value: '/profile',
+          icon: 'iconfont icon-huaban83 icon',
+        },
+      ],
+    };
+  },
+  watch: {
+    $route: {
+      handler(to) {
+        this.selectedLabelDefault = to.path;
+      },
+      immediate: true,
+    },
+  },
+  methods: {
+    clickHandler(label) {
+      // if you clicked home tab, then print 'Home'
+      console.log(label);
+      this.$router.push(label);
+    },
+  },
+};
+</script>
+<style lang="stylus" scoped>
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
 
-<style lang="stylus">
+#app {
+  height: 100vh;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
 
+.container {
+  flex: 1;
+  overflow: scroll;
+}
+
+.tabDiv {
+  background: #f2f2f2;
+}
+
+.cube-tab {
+  .icon {
+    font-size: 22px;
+    margin-bottom 20px
+  }
+}
 </style>
