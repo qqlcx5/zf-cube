@@ -3,7 +3,7 @@
     <div class="container">
       <router-view />
     </div>
-    <div class="tabDiv">
+    <div class="footer">
       <cube-tab-bar v-model="selectedLabelDefault" :data="tabs" @click="clickHandler" />
     </div>
   </div>
@@ -17,17 +17,17 @@ export default {
         {
           label: '首页',
           value: '/',
-          icon: 'iconfont icon-huaban43 icon',
+          icon: 'iconfont icon-huaban43 iconTab',
         },
         {
           label: '我的课程',
           value: '/course',
-          icon: 'iconfont icon-huaban5 icon',
+          icon: 'iconfont icon-huaban5 iconTab',
         },
         {
           label: '个人中心',
           value: '/profile',
-          icon: 'iconfont icon-huaban83 icon',
+          icon: 'iconfont icon-huaban83 iconTab',
         },
       ],
     };
@@ -66,15 +66,11 @@ html, body, #app {
   flex: 1;
   overflow: scroll;
 }
-
-.tabDiv {
-  background: #f2f2f2;
-}
-
-.cube-tab {
-  .icon {
-    font-size: 22px;
-    margin-bottom 20px
+.footer >>> .cube-tab-bar {
+  background-color #eee;
+  .iconTab{
+    font-size 20px;
+    line-height 30px;
   }
 }
 </style>
