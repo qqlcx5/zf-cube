@@ -1,21 +1,23 @@
 <template>
-  <div class="home">
-    <HomeHeader></HomeHeader>
+  <div class="HomeHeader">
+    <img class="logo" src="@/assets/images/logo.png" alt="">
+    <i class="iconfont icon-huaban129 moreIcon" ></i>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeHeader from './components/HomeHeader.vue';
+import { fetchCategory } from '../../../api/home';
 
 export default {
-  name: 'home',
-  components: {
-    HomeHeader,
+  name: 'HomeHeader',
+  mounted() {
+    fetchCategory().then((res) => {
+      console.log(res);
+    });
   },
 };
 </script>
-
 <style lang="stylus" scoped>
   .HomeHeader{
     display flex;

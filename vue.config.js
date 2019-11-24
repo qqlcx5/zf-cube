@@ -1,4 +1,5 @@
 module.exports = {
+  // vue-cli3 里的配置文件
   css: {
     loaderOptions: {
       stylus: {

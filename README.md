@@ -1,4 +1,4 @@
-# cube
+# cube-ui-project
 
 ## Project setup
 ```
