@@ -7,15 +7,15 @@
 
 <script>
 // @ is an alias to /src
-import { fetchCategory } from '../../../api/home';
+// import { fetchCategory } from '../../../api/home';
 
 export default {
   name: 'HomeHeader',
-  mounted() {
-    fetchCategory().then((res) => {
-      console.log(res);
-    });
-  },
+  // mounted() {
+  //   fetchCategory().then((res) => {
+  //     console.log(res);
+  //   });
+  // },
 };
 </script>
 <style lang="stylus" scoped>
