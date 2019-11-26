@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HomeHeader></HomeHeader>
+    <HomeHeader :categories="categories"></HomeHeader>
   </div>
 </template>
 

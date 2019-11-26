@@ -1,21 +1,41 @@
 <template>
   <div class="HomeHeader">
     <img class="logo" src="@/assets/images/logo.png" alt="">
-    <i class="iconfont icon-huaban129 moreIcon" ></i>
+    <i class="iconfont icon-huaban129 moreIcon" @click="handleDrawer" ></i>
+    <cube-drawer ref="drawer" title="请选择" :data="dealData" @select="handlerSelect"></cube-drawer>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import { fetchCategory } from '../../../api/home';
 
 export default {
   name: 'HomeHeader',
-  // mounted() {
-  //   fetchCategory().then((res) => {
-  //     console.log(res);
-  //   });
-  // },
+  props: {
+    categories: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {
+
+    };
+  },
+  computed: {
+    dealData() {
+      const defaultActive = [{ text: '全部课程', value: '-1' }];
+      return this.categories.length > 0
+        ? [[...defaultActive, ...this.categories]] : [defaultActive];
+    },
+  },
+  methods: {
+    handleDrawer() {
+      this.$refs.drawer.show();
+    },
+    handlerSelect(val) {
+      console.log(val[0]);
+    },
+  },
 };
 </script>
 <style lang="stylus" scoped>
