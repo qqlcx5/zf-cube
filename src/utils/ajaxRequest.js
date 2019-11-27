@@ -15,13 +15,6 @@ class AjaxRequest {
     this.queue = {};
   }
 
-  // setInterceptor(instance) {
-  // instance.interceptors.request.use((config) => {
-  //   console.log('interceptor.request');
-  //   return config;
-  // }, err => Promise.reject(err));
-  // instance.interceptors.response.use(res => res, err => Promise.reject(err));
-  // }
   setInterceptor(instance, url) {
     instance.interceptors.request.use((config) => {
       // 增加请求队列 请求前打开toast 请求后清空在关闭toast
