@@ -37,19 +37,21 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .HomeHeader{
-    display flex;
-    height 56px
-    justify-content space-between
-    align-items center
-    padding 0 20px
-    background-color #2a2a2a
-  }
-  .logo{
-    width 150px
-  }
-  .moreIcon{
-    font-size 20px
-    color #fff
-  }
+.HomeHeader {
+  display: flex;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #2a2a2a;
+}
+
+.logo {
+  width: 150px;
+}
+
+.moreIcon {
+  font-size: 20px;
+  color: #fff;
+}
 </style>
