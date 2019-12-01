@@ -10,16 +10,25 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    meta: {
+      idx: 0,
+    },
   },
   {
     path: '/course',
     name: 'course',
     component: Loadable(() => import(/* webpackChunkName: "about" */ '../views/Course/index.vue')),
+    meta: {
+      idx: 1,
+    },
   },
   {
     path: '/profile',
     name: 'profile',
     component: Loadable(() => import(/* webpackChunkName: "about" */ '../views/Profile/index.vue')),
+    meta: {
+      idx: 2,
+    },
   },
 ];
 

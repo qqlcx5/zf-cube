@@ -13,7 +13,7 @@
           <div :id="data.id" class="item">
             <h2>{{data.title}}</h2>
             <img :src="data.pic" alt />
-            <p>¥{{data.price}} {{data.info}} </p>
+            <p>{{data.price | addCurrency('$')}} {{data.info}} </p>
           </div>
         </template>
       </cube-recycle-list>
