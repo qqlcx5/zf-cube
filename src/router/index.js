@@ -1,41 +1,39 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Loadable from '../utils/Loadable';
-import Home from '../views/Home/index.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Loadable from "../utils/Loadable";
+import Home from "../views/Home/index.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     component: Home,
-    meta: {
-      idx: 0,
-    },
+    meta: { idx: 0 }
   },
   {
-    path: '/course',
-    name: 'course',
-    component: Loadable(() => import(/* webpackChunkName: "about" */ '../views/Course/index.vue')),
-    meta: {
-      idx: 1,
-    },
+    path: "/course",
+    name: "course",
+    component: Loadable(() =>
+      import(/* webpackChunkName: "course" */ "../views/Course/index.vue")
+    ),
+    meta: { idx: 1 }
   },
   {
-    path: '/profile',
-    name: 'profile',
-    component: Loadable(() => import(/* webpackChunkName: "about" */ '../views/Profile/index.vue')),
-    meta: {
-      idx: 2,
-    },
-  },
+    path: "/profile",
+    name: "profile",
+    component: Loadable(() =>
+      import(/* webpackChunkName: "profile" */ "../views/Profile/index.vue")
+    ),
+    meta: { idx: 2 }
+  }
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;
