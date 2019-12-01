@@ -1,4 +1,4 @@
-import axios from '@/utils/ajaxRequest1';
+import axios from '@/utils/ajaxRequest';
 // eslint-disable-next-line import/no-cycle
 import store from '@/store';
 
