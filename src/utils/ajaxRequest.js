@@ -5,7 +5,8 @@ import { Toast } from 'cube-ui';
 class AjaxRequest {
   constructor() {
     // development production
-    this.baseURL = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api' : '/'; // 基础路径
+    this.baseURL = process.env.NODE_ENV !== 'production' ? 'http://106.14.200.71:3000/api' : '/'; // 基础路径
+    // this.baseURL = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api' : '/'; // 基础路径
     this.timeout = 3000; // 超时时间
     this.toast = Toast.$create({
       txt: '正在加载',

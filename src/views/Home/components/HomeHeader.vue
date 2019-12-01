@@ -33,7 +33,8 @@ export default {
       this.$refs.drawer.show();
     },
     handlerSelect(val) {
-      console.log(val[0]);
+      // console.log(val[0]);
+      this.$emit('listenIndex', val);
     },
   },
 };

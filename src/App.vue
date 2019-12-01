@@ -43,7 +43,7 @@ export default {
   methods: {
     clickHandler(label) {
       // if you clicked home tab, then print 'Home'
-      console.log(label);
+      if (this.$route.path === label) return;
       this.$router.push(label);
     },
   },
