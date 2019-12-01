@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
+      <transition :name="animMove"></transition>
       <router-view />
     </div>
     <div class="footer">
@@ -12,6 +13,7 @@
 export default {
   data() {
     return {
+      animMove: 'slide-left',
       selectedLabelDefault: '/',
       tabs: [
         {
@@ -73,4 +75,11 @@ html, body, #app {
     line-height 30px;
   }
 }
+// .slide-left-enter-active,.slide-left-leave-active{
+//    transition: opacity .5s;
+// }
+// .slide-left-enter,.slide-left-leave-to{
+//    opacity 0;
+// }
+
 </style>

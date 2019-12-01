@@ -1,6 +1,4 @@
-
-// eslint-disable-next-line import/no-unresolved
-import axios from '@/utils/AjaxRequest';
+import axios from '@/utils/ajaxRequest1';
 // eslint-disable-next-line import/no-cycle
 import store from '@/store';
 
