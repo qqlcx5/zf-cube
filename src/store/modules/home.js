@@ -1,13 +1,13 @@
 // eslint-disable-next-line import/no-cycle
-import { fetchCategory, fetchSlides } from '@/api/home';
-import * as types from '../actions-type';
+import { fetchCategory, fetchSlides } from "@/api/home";
+import * as types from "../actions-type";
 
 export default {
   namespaced: true, // 命名空间
   state: {
     categories: [], // 分类数据
     currentLesson: -1, // 当前用户选择课程
-    slides: [], // 轮播图数组
+    slides: [] // 轮播图数组
   },
   actions: {
     // 发请求的
@@ -19,7 +19,7 @@ export default {
     async [types.SET_SLIDES]({ commit }) {
       const slides = await fetchSlides();
       commit(types.SET_SLIDES, slides);
-    },
+    }
   },
   mutations: {
     // 同步分类数据
@@ -33,6 +33,6 @@ export default {
     // 设置轮播图
     [types.SET_SLIDES](state, payload) {
       state.slides = payload;
-    },
-  },
+    }
+  }
 };

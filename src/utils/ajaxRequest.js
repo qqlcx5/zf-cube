@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Toast } from "cube-ui";
-
+import store from "../store/index";
+import * as types from "@/store/actions-type";
 class AjaxRequest {
   constructor() {
     // development production
@@ -21,6 +22,10 @@ class AjaxRequest {
   setInterceptor(instance, url) {
     instance.interceptors.request.use(
       config => {
+        const CancelToken = axios.CancelToken;
+        config.cancelToken = new CancelToken(c => {
+          store.commit(types.PUSH_TOKEN, c);
+        });
         // 增加请求队列 请求前打开toast 请求后清空在关闭toast
         if (Object.keys(this.queue).length === 0) {
           this.toast.show();
